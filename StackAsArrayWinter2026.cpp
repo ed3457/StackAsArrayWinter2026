@@ -2,10 +2,63 @@
 //
 
 #include <iostream>
-
+#include "Stack.h"
+using namespace std; 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Stack st; 
+
+	/*st.push(10);
+	st.push(11);
+	st.push(12);
+
+	cout << st.top() << endl;
+
+	
+
+	while (st.count() != 0)
+		st.pop();*/
+
+
+	// Expression matching: 
+	
+	char input; 
+
+	cin >> input;
+
+	while (input != 's')
+	{
+		if (input == '[' || input == '(')
+			st.push(input);
+
+		else
+		{
+			// look at the item at the top of the stack
+			char t = st.top();
+
+			if (t == '[' && input==']')
+			{
+				st.pop();
+
+			}
+
+			else if (t == '(' && input == ')')
+			{
+				st.pop();
+
+			}
+			else
+				st.push(input);
+
+		}
+
+
+
+		cin >> input; 
+	}
+
+	cout << st.count();
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

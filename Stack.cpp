@@ -1,6 +1,6 @@
 #include "Stack.h"
 
-void Stack::push(int element)
+void Stack::push(char element)
 {   
 	if (TopIndex + 1 == maxSize)
 		throw 1; // overflow 
@@ -9,7 +9,7 @@ void Stack::push(int element)
 
 }
 
-int Stack::pop()
+char Stack::pop()
 {
 	if (TopIndex == -1)
 		throw 2;// underflow 
@@ -17,7 +17,7 @@ int Stack::pop()
 	return data[TopIndex--];
 }
 
-int Stack::top()
+char Stack::top()
 {
 	if (TopIndex == -1)
 		throw 2;// underflow 
@@ -43,7 +43,7 @@ Stack::Stack(int maxSize)
 
 	TopIndex = -1;
 
-	data = new int[maxSize]; 
+	data = new char[maxSize]; 
 }
 
 Stack::~Stack()

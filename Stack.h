@@ -3,7 +3,7 @@ class Stack
 {
 
 private: 
-	int* data; 
+	char* data; 
 
 	int maxSize;
 
@@ -11,11 +11,11 @@ private:
 
 public:
 
-	void push(int element);
+	void push(char element);
 
-	int pop();
+	char pop();
 
-	int top();
+	char top();
 
 	int count(); 
 
